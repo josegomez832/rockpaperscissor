@@ -8,24 +8,23 @@
   
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
-  Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    color: #fff;
+}
+    .attribution a { font-weight: 500; color:#fff;}
   </style>
 </head>
 <body>
+  <button type="button" class="btn btn-outline rules">Rules</button>
 <div id="app">
   <div class="scoreboard">
     <div class="col">
@@ -60,26 +59,34 @@
         </div>
       </div>
     </div>
-    <div class="step step-2">
+    <div class="step step-2 hide">
       <div class="step-wrapper">
-        <div class="col-6">
+        <div class="col col-6" id="userChoice">
           <h3>You Picked</h3>
           <div id="selected" class="selections"></div>
         </div>
         
-        <div class="col-6">
+        <div class="col col-6" id="computerChoice">
           <h3>The House Selected</h3>
           <div id="Computerselected" class="selections"></div>
         </div>
 
-        <div class="col-12">
+        <div class="col col-12 results">
           <h3 id="message"></h3>
           <button type="button" id="play_again">Play Again</button>
         </div>
       </div>
     </div>
   </div>
-  
+  <div class="modal close">
+    <div class="modal-header">
+        <div class="modal-title">Rules</div>
+        <div  class="close-button"><img src="images/icon-close.svg" alt="Close Modal" /></div>
+    </div>
+    
+    <img src="images/image-rules.svg" alt="Rules of the game" />
+  </div>
+  <div class="overlay hide"></div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
